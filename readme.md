@@ -2,7 +2,11 @@
 
 ### Create new branch
 
-`git checkout -b new_readme`
+- create new branch:
+  `git checkout -b new_readme`
+
+- navigate between branches
+  `git checkout new_readme`
 
 # Javascript Advanced!@
 
