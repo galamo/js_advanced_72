@@ -1,5 +1,7 @@
 # Git (continue)
 
+
+
 ### Create new branch
 
 - create new branch & move into the branch:
@@ -33,3 +35,8 @@
 # Javascript Advanced!@
 
 ## How to create Objects in Javascript
+
+
+
+# link for js video
+https://drive.google.com/file/d/1kGX9pVo79ZEwMlhZRoc_zUhYEEI0sM_0/view?usp=sharing
