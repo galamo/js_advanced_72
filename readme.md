@@ -1,7 +1,5 @@
 # Git (continue)
 
-
-
 ### Create new branch
 
 - create new branch & move into the branch:
@@ -36,7 +34,16 @@
 
 ## How to create Objects in Javascript
 
+1. object literal = {}
+2. Object.create
+3. Function constructor
 
+# Homework
 
-# link for js video
-https://drive.google.com/file/d/1kGX9pVo79ZEwMlhZRoc_zUhYEEI0sM_0/view?usp=sharing
+1. please finish the following game
+
+### link for js video
+
+1. https://drive.google.com/file/d/1kGX9pVo79ZEwMlhZRoc_zUhYEEI0sM_0/view?usp=sharing 
+2. Create a function constructor that reflect Bank account ( take all properties and behavior from the real world)
+
