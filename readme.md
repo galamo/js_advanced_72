@@ -47,3 +47,14 @@
 1. https://drive.google.com/file/d/1kGX9pVo79ZEwMlhZRoc_zUhYEEI0sM_0/view?usp=sharing 
 2. Create a function constructor that reflect Bank account ( take all properties and behavior from the real world)
 
+
+
+# Ex - 22-12-2021
+## Create the following search
+1. Search by Key, based on color/type/engine
+2. Select option with the relevant Key color/type/engine
+3. values ( input text OR select option with the relevant values - red/1500/ferari)
+4. button for executing the search
+5. present the result in the HTML.
+
+
