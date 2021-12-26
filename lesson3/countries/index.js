@@ -24,12 +24,6 @@ const searchBy = [
   new Value("subregion", "subregion"),
 ];
 
-const operations = {
-  regions: getAllRegions,
-  startOfWeek: getAllStartOfWeeks,
-  status: getAllStatuses,
-};
-
 function drawOptionsElements(list, selectElRef) {
   const optionsElements = list.map(function (searchByValue) {
     return _getOptionsElement(searchByValue);
@@ -61,8 +55,6 @@ function getList(key) {
   console.log(Object.keys(list).filter((item) => item));
   return Object.keys(list).filter((item) => item !== "undefined");
 }
-
-
 
 // function getTotalPopulation() {
 //   return countries.reduce(function (total, country, index, allData) {
