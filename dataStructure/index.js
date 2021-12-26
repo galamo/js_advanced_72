@@ -29,17 +29,7 @@ const state = {
 const carsArray = [];
 const carsObj = {};
 const { types, colors, engines, doors } = state;
-function generateCars() {
-  for (let index = 0; index < 999999; index++) {
-    const type = types[Math.floor(Math.random() * 5)];
-    const color = colors[Math.floor(Math.random() * 5)];
-    const engine = engines[Math.floor(Math.random() * 5)];
-    const numberOfdoors = doors[Math.floor(Math.random() * 4)];
-    const currentCar = new Car(type, color, engine, numberOfdoors);
-    carsArray.push(currentCar);
-    carsObj[currentCar.lp] = currentCar;
-  }
-}
+
 
 function Car(_type, _color, _engine, _doors) {
   this.type = _type;
