@@ -58,3 +58,7 @@
 5. present the result in the HTML.
 
 
+# Homework  26-12
+- Try to convert the following function : `getCurrncies` to fetch also 
+languages values .
+
