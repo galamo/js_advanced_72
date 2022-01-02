@@ -40,9 +40,9 @@ rankPromise(5)
   });
 
 // fetch
-
+const url = "https://pokeapi.co/api/v2/pokemon/pikachu";
 function callServer() {
-  fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+  fetch(url)
     .then(function (result) {
       console.log(result);
       console.log("firstThen");
@@ -65,3 +65,55 @@ function theCallback(response) {
   image.height = 400;
   document.querySelector("#content").append(image);
 }
+
+function callApiXhr() {
+  const xhr = new XMLHttpRequest();
+
+  xhr.onload = function (e) {
+    console.log(xhr.response.currencies);
+    console.log(Object.keys(xhr.response[0].currencies)[0]);
+    const currency = Object.keys(xhr.response[0].currencies)[0];
+    // another request!!!!
+    const url = `https://rest.coinapi.io/v1/exchangerate/${
+      document.querySelector("#crypto").value
+    }/${currency}?apikey=0D4CEC5E-51C9-4799-8D05-E04AEF465AA2`;
+    const xhrCoin = new XMLHttpRequest();
+    xhrCoin.onload = function () {
+      console.log(xhrCoin.response.rate);
+    };
+    xhrCoin.open("GET", url);
+    xhrCoin.responseType = "json";
+    xhrCoin.send();
+  };
+  xhr.onerror = function (e) {
+    alert("Something went wrong with XHR");
+  };
+  xhr.open(
+    "GET",
+    `https://restcountries.com/v3.1/name/${
+      document.querySelector("#country").value
+    }`
+  );
+  xhr.responseType = "json";
+  xhr.send();
+}
+
+function callApiFetch() {
+  const countryName = document.querySelector("#country").value;
+  if (!countryName) return;
+  fetch(`https://restcountries.com/v3.1/name/${countryName}`)
+    .then(_resolveCountry)
+    .then(_resolveCountryJson)
+    .catch(_rejectCountry);
+
+  function _resolveCountry(response) {
+    return response.json();
+  }
+  function _resolveCountryJson(response) {
+    console.log(response[0].name);
+  }
+  function _rejectCountry() {
+      alert("something went wrong")
+  }
+}
+// coin api : API Key: 0D4CEC5E-51C9-4799-8D05-E04AEF465AA2
