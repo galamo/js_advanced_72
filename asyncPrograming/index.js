@@ -42,17 +42,26 @@ rankPromise(5)
 // fetch
 
 function callServer() {
-  fetch("https://restcountries.com/v3.1/all")
+  fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
     .then(function (result) {
       console.log(result);
       console.log("firstThen");
       return result.json();
     })
     .then(function (response) {
-      console.log("SecondThen");
-      console.log(response[0]);
+      theCallback(response); // This function will be executed when the response from API resolved
     })
     .catch(function (failure) {
       alert("Something went wrong");
     });
+}
+
+function theCallback(response) {
+  const { sprites } = response;
+  console.log(sprites.front_shiny);
+  const image = document.createElement("img");
+  image.src = sprites.front_shiny;
+  image.width = 400;
+  image.height = 400;
+  document.querySelector("#content").append(image);
 }
