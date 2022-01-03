@@ -62,3 +62,8 @@
 - Try to convert the following function : `getCurrncies` to fetch also 
 languages values .
 
+# Homework 2-1-2022
+- Complete the asyncPrograming task - and convert the XHR code to use fetch
+- Create Dynamic Search for Pokemons using the following API: https://pokeapi.co/
+- Draw the result of the pokemons in cards ( the card will show the pokemon name and front image ) when hovering the card the card will flip and show the back image of the pokemon, check the API result and understand what is the pokemon front image and back image.
+
