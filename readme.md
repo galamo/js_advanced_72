@@ -73,3 +73,6 @@ languages values .
 1. Create ajax request based on $.ajax and fetch information from 
 countries API - https://restcountries.com/v3.1/currency/{currency}
 
+
+# Fetch 
+https://flaviocopes.com/fetch-api/
