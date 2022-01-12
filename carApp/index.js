@@ -24,10 +24,20 @@ function searchButtonAction() {
     if (!value) return;
     drawLoader()
     const params = `${value}?format=json`
-    fetch(`${MANUFACTURER_API}/${params}`)
-        .then(_setJsonReponse)
-        .then(_setManufacturesResponse)
-        .catch(_setErrorResponse)
+    // fetch(`${MANUFACTURER_API}/${params}`)
+    //     .then(_setJsonReponse)
+    //     .then(_setManufacturesResponse)
+    //     .catch(_setErrorResponse)
+
+    $.ajax({
+        url: `${MANUFACTURER_API}/${params}`,
+        method: "GET",
+        dataType: "json",
+        success: _setManufacturesResponse,
+        error: _setErrorResponse
+    })
+
+
 
     function _setJsonReponse(response) {
         return response.json()
@@ -130,24 +140,35 @@ function getCard(data) {
 
 function getManufacturerCountry(data) {
     const country = data.country;
-    fetch(`${COUNTRY_API}/${country}`)
-        .then(_setJsonReponse)
-        .then(_setCountryReponse)
-        .catch(_setErrorResponse)
+
+    $.get(`${COUNTRY_API}/${country}`).done(_setCountryReponse).fail(_setErrorResponse)
+
+    // fetch(`${COUNTRY_API}/${country}`)
+    //     .then(_setJsonReponse)
+    //     .then(_setCountryReponse)
+    //     .catch(_setErrorResponse)
     // this function can be reused!
     function _setJsonReponse(response) {
         return response.json()
     }
     function _setCountryReponse(response) {
         // this function can be divided to more functions 
+        console.log(response)
         if (!response[0] || !response[0].flags) return
         console.log(response[0].flags.png)
-        const flagImage = document.createElement("img")
-        flagImage.src = response[0].flags.png
-        flagImage.height = 100;
-        flagImage.width = 100
-        document.getElementById(data.id).querySelector("#country").append(flagImage)
+        // Create Image => JS
+        // const flagImage = document.createElement("img")
+        // flagImage.src = response[0].flags.png
+        // flagImage.height = 100;
+        // flagImage.width = 100
+        // Create Image => Jquery
+        const flagImageJquery = $("<img/>").attr({ src: response[0].flags.png, height: 100, width: 100 })
 
+        // Append image => Jquery
+        $(`#${data.id}`).find("#country").append(flagImageJquery)
+
+        // Append Image => JS
+        // document.getElementById(data.id).querySelector("#country").append(flagImage)
     }
     function _setErrorResponse(error) {
         if (DOM.alertModal) {
