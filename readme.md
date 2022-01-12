@@ -67,3 +67,9 @@ languages values .
 - Create Dynamic Search for Pokemons using the following API: https://pokeapi.co/
 - Draw the result of the pokemons in cards ( the card will show the pokemon name and front image ) when hovering the card the card will flip and show the back image of the pokemon, check the API result and understand what is the pokemon front image and back image.
 
+
+
+# ex jquery ajax
+1. Create ajax request based on $.ajax and fetch information from 
+countries API - https://restcountries.com/v3.1/currency/{currency}
+
