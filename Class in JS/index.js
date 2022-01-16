@@ -14,49 +14,23 @@
 
 
 class Warrior {
-    constructor(type, level, abilities, power) {
+    constructor(name, level) {
         this.id = Math.ceil(Math.random() * 9999)
         this.level = level
-        this.power = power
-        this.type = type
-        this.abilities = abilities
+        this.name = name
     }
-
     attack() {
-        console.log(`${this.type} attacks with level ${this.level}`)
+        console.log(`${this.name} attacks with level ${this.level}`)
     }
-
-    getLevel() {
-        return this.level
-    }
-
-    setLevel(value) {
-        if (value < 0) return;
-        this.level = value
-    }
-
-
-    getPower() {
-        return this.power + this.level
-    }
-
-    setPower(value) {
-        this.power = value
-    }
-
-    get typeField() {
-        return this.type
-    }
-
-    set typeField(value) {
-        this.type = value
-    }
-
-    get strength() {
-        console.log(1111)
-        return this.level * this.power
-    }
-
 }
 
-const warrior1 = new Warrior("archer", 10, ["magic arrow"], 50)
+class Archer extends Warrior {
+    constructor(numberOfArrows, name, level) {
+        super(name, level)
+        this.numberOfArrows = numberOfArrows;
+        this.bowLevel = 0
+    }
+}
+
+const warrior1 = new Warrior("warrior1", 10)
+const archer1 = new Archer(50, "archer1", 10)
