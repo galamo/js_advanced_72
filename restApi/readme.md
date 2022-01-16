@@ -18,3 +18,17 @@
 5. browse in your browser to `http://localhost:<PORT>/fruits`
 6. Add new fruit -  browse in your browser to `http://localhost:<PORT>/fruit/<FruitName>`
 7. Validate your fruits! run 5 again!
+
+
+# npm 
+Node package manager
+
+`npm install typescript`
+`npm install axios` ===>>>> Network!!!!!!!!!
+
+
+# Homework
+1. Create HTML page to interact the new API - fruitsApi
+2. GET /fruits - will show all the fruits on load
+3. GET /fruit/FRUIT_NAME - add new fruit
+4. After adding new fruit - show the updated list of fruits
