@@ -1,8 +1,9 @@
 const express = require("express")
+const cors = require("cors")
 const app = express();
 
 const talsFruits = ["coconut", "orange", "mango", "peanaple"]
-
+app.use(cors)
 let num = 0;
 
 app.get("/status", (req, res, next) => {
@@ -26,4 +27,4 @@ app.get("/fruit/:fruit", (req, res, next) => {
 })
 
 
-app.listen(3500)
+app.listen(3200)
