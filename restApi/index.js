@@ -1,9 +1,10 @@
 const express = require("express")
-const cors = require("cors")
 const app = express();
+var cors = require('cors')
+
+app.use(cors())
 
 const talsFruits = ["coconut", "orange", "mango", "peanaple"]
-app.use(cors)
 let num = 0;
 
 app.get("/status", (req, res, next) => {
