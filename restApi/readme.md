@@ -49,3 +49,4 @@ Node package manager
 1. missing parameter
 2. invalid parameter type
 3. success 
+4. wrong credentials

@@ -41,7 +41,11 @@ app.post("/login", (req, res, next) => {
     console.log(req.body)
     if (!validateBody(req.body)) return res.sendStatus(400)
     if (!validateUser(req.body)) return res.sendStatus(401)
-    else return res.json({ message: "Login success" })
+    else {
+        setTimeout(() => {
+            return res.json({ message: "Login success" })
+        }, 2000);
+    }
 })
 
 function validateBody({ userName, password }) {
