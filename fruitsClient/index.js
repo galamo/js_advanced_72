@@ -28,6 +28,7 @@ function addFruit() {
         },
         body: JSON.stringify(payload)
     }).then(_setJson).then(_addFruitSuccess).catch(_setError)
+
     function _setJson(response) {
         return response.json()
     }
