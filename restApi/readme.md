@@ -32,3 +32,20 @@ Node package manager
 2. GET /fruits - will show all the fruits on load
 3. GET /fruit/FRUIT_NAME - add new fruit
 4. After adding new fruit - show the updated list of fruits
+
+
+# Api Documentation
+
+## GET /fruits
+## POST /fruit 
+
+## POST /login 
+1. support api to authenticate users
+2. payload ( body ) ``` { userName: String, password:String } ```
+3. content Type: application/json
+4. Example:  ``` { userName:"Admin", password: "1234" }  ```
+
+### use cases:
+1. missing parameter
+2. invalid parameter type
+3. success 

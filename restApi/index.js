@@ -37,5 +37,19 @@ app.post("/fruit", (req, res, next) => {
     res.json({ message: "POST request Fruit created" })
 })
 
+app.post("/login", (req, res, next) => {
+    console.log(req.body)
+    if (!validateBody(req.body)) return res.sendStatus(400)
+    if (!validateUser(req.body)) return res.sendStatus(401)
+    else return res.json({ message: "Login success" })
+})
 
+function validateBody({ userName, password }) {
+    if (typeof userName !== 'string' || typeof password !== 'string') return false
+    return true;
+}
+function validateUser({ userName, password }) {
+    if (userName.toLowerCase() === 'admin' && password.toLowerCase() === '1234') return true
+    return false;
+}
 app.listen(3200)

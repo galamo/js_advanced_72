@@ -19,8 +19,16 @@ function init() {
 function addFruit() {
     const fruitsUrl = "fruit"
     const currentFruit = $("#searchInput").val()
+    const payload = { fruit: currentFruit }
     if (!currentFruit) return;
-    fetch(`${ApiBaseUrl}/${fruitsUrl}/${currentFruit}`).then(_setJson).then(_addFruitSuccess).catch(_setError)
+    fetch(`${ApiBaseUrl}/${fruitsUrl}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    }).then(_setJson).then(_addFruitSuccess).catch(_setError)
+
     function _setJson(response) {
         return response.json()
     }
