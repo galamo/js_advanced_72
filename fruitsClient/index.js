@@ -20,7 +20,7 @@ function addFruit() {
     const fruitsUrl = "fruit"
     const currentFruit = $("#searchInput").val()
     if (!currentFruit) return;
-    fetch(`${ApiBaseUrl}/${fruitsUrl}/${currentFruit}`, {}).then(_setJson).then(_addFruitSuccess).catch(_setError)
+    fetch(`${ApiBaseUrl}/${fruitsUrl}/${currentFruit}`).then(_setJson).then(_addFruitSuccess).catch(_setError)
     function _setJson(response) {
         return response.json()
     }
