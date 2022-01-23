@@ -50,3 +50,7 @@ setUserId(id)
 2. create a typescript function which recieved userName, userId, age, jobs and print all the informaiton to console .log
 3. configure your environment to compile the index.ts to index.js
 4. run the index.js in the HTML file
+
+
+# Homework
+- convert MiniSuper project to typescript
