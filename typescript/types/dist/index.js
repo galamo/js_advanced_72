@@ -13,3 +13,17 @@ function printUser(user) {
 }
 printUser("Shay!!!!");
 printUser("Shay!!!!");
+function printEmployee(userName, id, age, jobs) {
+    console.log(`${userName} , ${id} , ${age} `);
+    jobs.forEach(item => console.log(item));
+}
+printEmployee("nava", "112124", 22, ["soldier", "wedding_lover"]);
+var URLS;
+(function (URLS) {
+    URLS["BaseUrl"] = "http://localhost:3200";
+})(URLS || (URLS = {}));
+function getUserAge() {
+    if (!user)
+        return;
+    return "Str";
+}

@@ -19,3 +19,20 @@ function printUser(user: string) {
 }
 printUser("Shay!!!!")
 printUser("Shay!!!!")
+
+
+function printEmployee(userName: string, id: string, age: number, jobs: Array<string>) {
+    console.log(`${userName} , ${id} , ${age} `)
+    jobs.forEach(item => console.log(item))
+}
+printEmployee("nava", "112124", 22, ["soldier", "wedding_lover"])
+
+enum URLS {
+    BaseUrl = "http://localhost:3200",
+}
+
+function getUserAge(): string | undefined {
+    if (!user) return;
+    return "Str"
+}
+
