@@ -8,10 +8,7 @@ $(document).ready(init)
 function init() {
     $("#loginAction").on("click", moreActions)
 }
-
 function moreActions() {
-    console.log("More Action started")
-    // Promise.all([loginAction,loginAction]).then().catch()
     loginAction();
     console.log("More Action Ended")
 
@@ -25,8 +22,12 @@ async function loginAction() {
         console.log("Before fetch")
         const result = await fetch(`${ApiBaseUrl}/${loginUrl}`, fetchOptions)
         const jsonResult = await result.json();
-        if (jsonResult.message === "Login success") popUpModal("alertModalSuccess")
+        if (jsonResult.message === "Login success") {
+            popUpModal("alertModalSuccess")
+            redirectToFruitsApp()
+        }
         console.log("after fetch")
+        return true;
     } catch (ex) {
         popUpModal("alertModalError")
         console.log(ex)
@@ -43,7 +44,6 @@ async function loginAction() {
         }
     }
 }
-
 function _getPayload() {
     return { userName: $("#userName").val(), password: $("#password").val() }
 }
@@ -55,3 +55,8 @@ function popUpModal(id) {
 }
 
 
+function redirectToFruitsApp() {
+    setTimeout(() => {
+        window.location.href = "file:///C:/Users/Jbt/Desktop/js_advanced_72/fruitsClient/index.html"
+    }, 1000);
+}
