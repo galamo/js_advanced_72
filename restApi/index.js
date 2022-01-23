@@ -10,6 +10,7 @@ app.use(bodyParser.json())
 
 
 const talsFruits = ["coconut", "orange", "mango", "peanaple"]
+const fish = ["salmoon", "bas", "lavrak", "barYam", "lokus"]
 let num = 0;
 
 app.get("/status", (req, res, next) => {
@@ -24,6 +25,13 @@ app.get("/status", (req, res, next) => {
 app.get("/fruits", (req, res, next) => {
     console.log(`request ${new Date().toUTCString()} arrived`)
     res.json(talsFruits)
+})
+app.get("/fish", (req, res, next) => {
+    console.log(`request ${new Date().toUTCString()} arrived`)
+
+    setTimeout(() => {
+        return res.json(fish)
+    }, 1500);
 })
 
 app.get("/fruit/:fruit", (req, res, next) => {
