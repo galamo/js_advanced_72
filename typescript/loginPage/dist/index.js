@@ -12,6 +12,7 @@ var ApiUrls;
     ApiUrls["BASE_URL"] = "http://localhost:3200";
     ApiUrls["LOGIN_URL"] = "login";
 })(ApiUrls || (ApiUrls = {}));
+// class Payload
 function init() {
     document.querySelector("#loginAction").addEventListener("click", moreActions);
 }
@@ -53,7 +54,7 @@ function loginAction() {
     });
 }
 function _getPayload() {
-    return { userName: document.querySelector("#userName").nodeValue, password: document.querySelector("#password").nodeValue };
+    return { userNameEmail: document.querySelector("#userName").nodeValue, password: document.querySelector("#password").nodeValue };
 }
 function popUpModal(id) {
     // $(`#${id}`).css({ visibility: "visible" })
@@ -63,6 +64,9 @@ function popUpModal(id) {
 }
 function redirectToFruitsApp() {
     setTimeout(() => {
-        window.location.href = "file:///C:/Users/Jbt/Desktop/js_advanced_72/fruitsClient/index.html";
+        redirect("file:///C:/Users/Jbt/Desktop/js_advanced_72/fruitsClient/index.html");
     }, 1000);
+}
+function redirect(url) {
+    window.location.href = url;
 }
