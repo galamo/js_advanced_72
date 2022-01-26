@@ -29,15 +29,19 @@ function searchButtonAction() {
     //     .then(_setManufacturesResponse)
     //     .catch(_setErrorResponse)
 
-    $.ajax({
-        url: `${MANUFACTURER_API}/${params}`,
-        method: "GET",
-        dataType: "json",
-        success: _setManufacturesResponse,
-        error: _setErrorResponse
-    })
+    // $.ajax({
+    //     url: `${MANUFACTURER_API}/${params}`,
+    //     method: "GET",
+    //     dataType: "json",
+    //     success: _setManufacturesResponse,
+    //     error: _setErrorResponse
+    // })
 
-
+    try {
+        
+    } catch (error) {
+        _setErrorResponse(error)
+    }
 
     function _setJsonReponse(response) {
         return response.json()
