@@ -5,6 +5,15 @@ enum ApiUrls {
     LOGIN_URL = "login"
 }
 
+interface IPayload {
+    userNameEmail: string;
+    password: string;
+}
+
+// class Payload
+
+
+
 function init() {
     document.querySelector("#loginAction").addEventListener("click", moreActions)
 }
@@ -35,7 +44,7 @@ async function loginAction() {
     }
     console.log("Login Action End")
 
-    function _getFetchOptions(payload: { userName: string, password: string }): {
+    function _getFetchOptions(payload: IPayload): {
         method: string, headers:
         { [key: string]: string }, body: string
     } {
@@ -48,8 +57,8 @@ async function loginAction() {
         }
     }
 }
-function _getPayload(): { userName: string, password: string } {
-    return { userName: document.querySelector("#userName").nodeValue, password: document.querySelector("#password").nodeValue }
+function _getPayload(): IPayload {
+    return { userNameEmail: document.querySelector("#userName").nodeValue, password: document.querySelector("#password").nodeValue }
 }
 function popUpModal(id: string): void {
     // $(`#${id}`).css({ visibility: "visible" })
@@ -59,8 +68,15 @@ function popUpModal(id: string): void {
 }
 
 
+
+
 function redirectToFruitsApp() {
     setTimeout(() => {
-        window.location.href = "file:///C:/Users/Jbt/Desktop/js_advanced_72/fruitsClient/index.html"
+        redirect("file:///C:/Users/Jbt/Desktop/js_advanced_72/fruitsClient/index.html")
     }, 1000);
 }
+
+function redirect(url: string): void {
+    window.location.href = url
+}
+
