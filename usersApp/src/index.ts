@@ -4,7 +4,9 @@ interface IUserServer {
     username: string
     email: string;
     website: string;
+    setUser: Function
 }
+
 class User {
     public name: string;
     public userName: string;
