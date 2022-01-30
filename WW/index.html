@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 Web Workers</title>
+    <script type="text/javascript" src="primesWorker.js"></script>
+    <script>         function checkWorkerSupport() { if (typeof (window.Worker) === "undefined") alert("Your browser doesn't support HTML5 Web Workers!"); } function findPrimes() {
+            var min = document.getElementById("txtMin").value;
+            var max = document.getElementById("txtMax").value;
+            var worker = new Worker("primesWorker.js"); worker.onmessage = function (e) {
+                var lstPrimes = document.getElementById("lstPrimes");
+                var opt = document.createElement("option");
+                opt.innerHTML = e.data; lstPrimes.appendChild(opt);
+            }
+            worker.onerror = function (error) { alert(error.data); }
+            worker.postMessage({ 'min': min, 'max': max });
+        }           </script>
+</head>
+
+<body onload="checkWorkerSupport();">
+    <h2>Find Primes</h2> Min: <input type="text" id="txtMin" /><br /> Max: <input type="text" id="txtMax" /><br />
+    <input type="button" id="btnFindPrimes" value="Find Primes" onclick="findPrimes();" /><br /> <select id="lstPrimes"
+        size="10"> </select>
+</body>
+
+</html>
