@@ -1,4 +1,5 @@
 const lineChartContainer = "lineChart"
+
 $("#content").load("template.html");
 
 function init() {
@@ -46,6 +47,26 @@ function generateData() {
     return data
 }
 
+function fullScreen() {
+    document.documentElement && document.documentElement.requestFullscreen()
+}
+function exitFullScreen() {
+    document.exitFullscreen();
+}
+
+function createAnchor() {
+    const a = document.createElement("a")
+    a.innerText = "Click to see your location"
+    if (window.navigator && window.navigator.geolocation) {
+        window.navigator.geolocation.getCurrentPosition((response) => {
+            const { coords } = response
+            a.href = `https://www.latlong.net/c/?lat=${coords.latitude}&long=${coords.longitude}`
+            a.target = "_blank"
+            document.querySelector("#content").append(a)
+        })
+    }
+
+}
 init();
 
 
